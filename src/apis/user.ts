@@ -1,12 +1,12 @@
-import axios from "axios";
+import { baseApi } from "./base";
 import { LoginData, User } from "@/interface/user";
 
 export const postUserLogin = async (loginData: LoginData) => {
   try {
-    const res = await axios.post<{
+    const res = await baseApi.post<{
       user: User;
       token: string;
-    }>("http://localhost:8080/user/login", loginData);
+    }>("/user/login", loginData);
     if (res.status === 200) {
       return res.data;
     }
@@ -17,10 +17,10 @@ export const postUserLogin = async (loginData: LoginData) => {
 
 export const postUserSignUp = async (signUpData: FormData) => {
   try {
-    const res = await axios.post<{
+    const res = await baseApi.post<{
       user: User;
       token: string;
-    }>("http://localhost:8080/user/sign-up", signUpData, {
+    }>("/user/sign-up", signUpData, {
       headers: {
         "Content-Type": "multipart/form-data",
       },

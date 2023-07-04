@@ -1,11 +1,7 @@
-import axios from "axios";
-
+import { baseApi } from "./base";
 export const uploadRecipe = async (recipeFormData: FormData) => {
   try {
-    const response = await axios.put(
-      "http://http://3.25.227.169//recipe/add",
-      recipeFormData
-    );
+    const response = await baseApi.put(`/recipe/add`, recipeFormData);
 
     console.log("Recipe saved successfully:", response.data);
     return response.data;
@@ -17,7 +13,7 @@ export const uploadRecipe = async (recipeFormData: FormData) => {
 
 export const getRecipeList = async () => {
   try {
-    const response = await axios.get("http://localhost:8080/recipe/list");
+    const response = await baseApi.get(`/recipe/list`);
     return response.data;
   } catch (error) {
     console.error("Failed to get the recipe:", error);
@@ -26,7 +22,7 @@ export const getRecipeList = async () => {
 };
 export const getRecipeDetail = async (id: string) => {
   try {
-    const response = await axios.get("http://localhost:8080/recipe/detail", {
+    const response = await baseApi.get("/recipe/detail", {
       params: { id },
     });
     return response.data;
@@ -38,7 +34,7 @@ export const getRecipeDetail = async (id: string) => {
 
 export const getViewCount = async () => {
   try {
-    const res = await axios.get("http://localhost:8080/recipe/:id ");
+    const res = await baseApi.get("/recipe/:id ");
     return res.data;
   } catch (error) {
     console.log("Failed to get the ViewCount:", error);
@@ -48,7 +44,7 @@ export const getViewCount = async () => {
 
 export const getSearchList = async (keyword: string) => {
   try {
-    const response = await axios.get("http://localhost:8080/recipe/search", {
+    const response = await baseApi.get("/recipe/search", {
       params: { keyword },
     });
     return response.data;
