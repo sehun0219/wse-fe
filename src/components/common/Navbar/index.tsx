@@ -41,7 +41,7 @@ const Navbar = () => {
   const navigate = useNavigate();
   const [search, setSearch] = useState("");
   const [avatarImg, setAvatarImg] = useState("");
-  const { searchTerm, setSearchTerm } = useSearch();
+  const { setSearchTerm } = useSearch();
   useEffect(() => {
     const userStorageItem = window.localStorage.getItem("userInfo") ?? null;
     if (userStorageItem) {

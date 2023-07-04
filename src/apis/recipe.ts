@@ -1,4 +1,3 @@
-import { ViewCount } from "../components/common/RecipeCard/styled";
 import axios from "axios";
 
 export const uploadRecipe = async (recipeFormData: FormData) => {
