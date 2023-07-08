@@ -128,10 +128,18 @@ const DetailForm = ({ data }: any) => {
       <MainContentWrap>
         <MainWrap>
           <MainImg
-            src={"http://localhost:8080/uploads/" + recipeData.mainImg}
+            src={
+              import.meta.env.VITE_APP_SERVER_CODE +
+              "/uploads/" +
+              recipeData.mainImg
+            }
           ></MainImg>
           <AvatarImg
-            src={"http://localhost:8080/" + recipeData.creator.avatarImg}
+            src={
+              import.meta.env.VITE_APP_SERVER_CODE +
+              "/" +
+              recipeData.creator.avatarImg
+            }
           ></AvatarImg>
           <UserId>{recipeData.creator.name}</UserId>
           <Title>{recipeData.title}</Title>
@@ -175,7 +183,11 @@ const DetailForm = ({ data }: any) => {
                 <StepNum>{item.stepNum}</StepNum>
                 <StepDesc>{item.stepDesc}</StepDesc>
                 <StepImg
-                  src={"http://localhost:8080/uploads/" + item.stepImg}
+                  src={
+                    import.meta.env.VITE_APP_SERVER_CODE +
+                    "/uploads/" +
+                    item.stepImg
+                  }
                 ></StepImg>
               </EachStepCard>
             ))}
@@ -188,7 +200,7 @@ const DetailForm = ({ data }: any) => {
               style={{ transform: `translateX(-${currentIndex * 100}%)` }}
             >
               <Image
-                src={"http://localhost:8080/uploads/" + img}
+                src={import.meta.env.VITE_APP_SERVER_CODE + "/uploads/" + img}
                 alt="slider image"
               />
             </ImageContainer>
@@ -198,7 +210,7 @@ const DetailForm = ({ data }: any) => {
         </SliderContainer>
       </MainContentWrap>
 
-      {/* <SideWrap>
+      <SideWrap>
         <MostViewCard>
           <TextWrap>
             <CardTitle>Top Ranked</CardTitle>
@@ -249,7 +261,7 @@ const DetailForm = ({ data }: any) => {
           <SideRecipeImg></SideRecipeImg>
           <SideRecipeTitle></SideRecipeTitle>
         </SideRecipeCard>
-      </SideWrap> */}
+      </SideWrap>
 
       <FooterBox>
         <Footer></Footer>

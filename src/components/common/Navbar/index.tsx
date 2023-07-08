@@ -111,7 +111,9 @@ const Navbar = () => {
           <LogoutWrap>
             <WelcomeBox>
               <AvatarBox>
-                <Avatar src={"http://localhost:8080" + avatarImg} />
+                <Avatar
+                  src={import.meta.env.VITE_APP_SERVER_CODE + avatarImg}
+                />
               </AvatarBox>
               <WelcomeText>Welcome!! {user.email}</WelcomeText>
             </WelcomeBox>

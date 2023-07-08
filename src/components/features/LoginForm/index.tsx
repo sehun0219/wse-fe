@@ -47,7 +47,7 @@ const LoginForm = () => {
         </InputContainer>
 
         <LoginButton type="submit">Login</LoginButton>
-        <BrWrap>
+        {/* <BrWrap>
           <Br></Br>
           Or
           <Br></Br>
@@ -55,7 +55,7 @@ const LoginForm = () => {
 
         <div>
           <GoogleLogin onSuccess={responseMessage} />
-        </div>
+        </div> */}
         <PassWordChecker to="/">Did you forget your password?</PassWordChecker>
       </FormContainer>
       <SignUpChecker>

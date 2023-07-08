@@ -48,6 +48,7 @@ const Main = () => {
     temp.push(-1);
     setPageNation(temp);
   }, [recipeData.length]);
+
   const sidebarContext = useContext(SidebarContext);
   if (sidebarContext === undefined) {
     return null;

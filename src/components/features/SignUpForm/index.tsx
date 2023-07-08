@@ -86,12 +86,12 @@ const SignUpForm = () => {
     <PageWrapper>
       <FormContainer onSubmit={handleSubmit}>
         <LogoImg></LogoImg>
-        <GoogleLogin>Login by Google</GoogleLogin>
+        {/* <GoogleLogin>Login by Google</GoogleLogin>
         <BrWrap>
           <Br></Br>
           Or
           <Br></Br>
-        </BrWrap>
+        </BrWrap> */}
         <FormInput
           value={email}
           type="text"
