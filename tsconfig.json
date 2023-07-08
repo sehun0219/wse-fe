@@ -2,7 +2,8 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "@/*": ["src/*"]
+      "@/*": ["src/*"],
+      "@/public/*": ["public/*"]
     },
     "target": "ESNext",
     "lib": ["DOM", "DOM.Iterable", "ESNext"],

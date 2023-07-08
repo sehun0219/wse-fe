@@ -13,7 +13,7 @@ import {
 } from "./styled";
 import FormInput from "@/components/common/FormInput";
 import Footer from "@/components/common/Footer";
-import { GoogleLogin } from "@react-oauth/google";
+import LoginLogo from "@/public/Logo/CardLogo.png";
 
 const LoginForm = () => {
   const { handleSubmit, email, setEmail, password, showPassword, setPassword } =
@@ -26,7 +26,7 @@ const LoginForm = () => {
   return (
     <PageWrapper>
       <FormContainer onSubmit={handleSubmit}>
-        <LogoImg />
+        <LogoImg src={LoginLogo} />
         <InputContainer>
           <FormInput
             value={email}

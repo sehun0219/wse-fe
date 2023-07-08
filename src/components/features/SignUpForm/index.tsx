@@ -20,6 +20,8 @@ import { ChangeEvent, FormEvent, useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { postUserSignUp } from "@/apis/user";
 import { UserContext } from "@/store/UserContext";
+import LogoLogin from "@/public/Logo/CardLogo.png";
+import AvatarLogo from "@/public/Avatar/Avatar.png";
 
 const SignUpForm = () => {
   const navigate = useNavigate();
@@ -29,9 +31,7 @@ const SignUpForm = () => {
   const [isPasswordValid, setIsPasswordValid] = useState<boolean>(false);
   const [avatarImg, setAvatarImg] = useState<File>();
 
-  const [avatarPreview, setAvatarPreview] = useState<string | null>(
-    "public/Avatar/Avatar.png"
-  );
+  const [avatarPreview, setAvatarPreview] = useState(AvatarLogo);
 
   const passWordHint = `For password,least 8 characters include a numbers, and special characters`;
 
@@ -85,7 +85,7 @@ const SignUpForm = () => {
   return (
     <PageWrapper>
       <FormContainer onSubmit={handleSubmit}>
-        <LogoImg></LogoImg>
+        <LogoImg src={LogoLogin} />
         {/* <GoogleLogin>Login by Google</GoogleLogin>
         <BrWrap>
           <Br></Br>
@@ -123,10 +123,7 @@ const SignUpForm = () => {
           />
           <label htmlFor="avatarUpload">
             <AvatarHiddenBox>
-              <Avatar
-                src={avatarPreview || "public/Avatar/Avatar.png"}
-                alt="Avatar"
-              ></Avatar>
+              <Avatar src={avatarPreview} alt="Avatar"></Avatar>
             </AvatarHiddenBox>
           </label>
         </AvatarResister>

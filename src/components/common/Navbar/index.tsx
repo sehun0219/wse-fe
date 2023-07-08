@@ -9,6 +9,7 @@ import { UserContext } from "@/store/UserContext";
 import { useNavigate } from "react-router-dom";
 import { useSidebar } from "@/store/SidebarContext";
 import { useSearch } from "@/store/SearchContext";
+import Logo from "@/public/Logo/Logo.png";
 
 import {
   NavbarContainer,
@@ -91,7 +92,7 @@ const Navbar = () => {
         <Line />
       </ToggleBox>
       <LogoWrap href="/">
-        <LogoIcon src="public/Logo/Logo.png"></LogoIcon>
+        <LogoIcon src={Logo}></LogoIcon>
         <TextBox>What should I eat</TextBox>
       </LogoWrap>
       <SearchWrap>

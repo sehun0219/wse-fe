@@ -22,13 +22,12 @@ export const FormContainer = styled.form`
   background-color: #ffff;
 `;
 
-export const LogoImg = styled.div`
+export const LogoImg = styled.img`
   width: 100%;
-  height: 128px;
+
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  background-image: url("public/Logo/CardLogo.png");
   background-size: cover;
   background-position: center;
   border-radius: 2px;
