@@ -24,7 +24,6 @@ export const FormContainer = styled.form`
 
 export const LogoImg = styled.img`
   width: 100%;
-
   display: flex;
   flex-direction: column;
   justify-content: flex-end;

@@ -18,24 +18,17 @@ interface RecipeCardProps {
 const RecipeCard = ({ data }: RecipeCardProps) => {
   return (
     <CardWrap>
-      <ThumbNailImg
-        src={import.meta.env.VITE_APP_SERVER_CODE + "/uploads/" + data.mainImg}
-      />
+      <ThumbNailImg src={data.mainImg} />
       <WarpImgAvatarAndDetails>
         <ThumbNailDetails>
-          <ThumbNailAvatar
-            src={
-              import.meta.env.VITE_APP_SERVER_CODE +
-              JSON.parse(data.userInfo).avatarImg
-            }
-          />
+          <ThumbNailAvatar src={JSON.parse(data.userInfo).avatarImg} />
         </ThumbNailDetails>
         <DetailsContent>
           <RecipeTitle>{data.title}</RecipeTitle>
           <UserId>{JSON.parse(data.userInfo).name}</UserId>
-          <ViewCount>
+          {/* <ViewCount>
             View {data.viewCount} · {data.createdAt}
-          </ViewCount>
+          </ViewCount> */}
         </DetailsContent>
       </WarpImgAvatarAndDetails>
     </CardWrap>

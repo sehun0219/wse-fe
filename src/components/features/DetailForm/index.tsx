@@ -127,20 +127,8 @@ const DetailForm = ({ data }: any) => {
     <PageWrapper>
       <MainContentWrap>
         <MainWrap>
-          <MainImg
-            src={
-              import.meta.env.VITE_APP_SERVER_CODE +
-              "/uploads/" +
-              recipeData.mainImg
-            }
-          ></MainImg>
-          <AvatarImg
-            src={
-              import.meta.env.VITE_APP_SERVER_CODE +
-              "/" +
-              recipeData.creator.avatarImg
-            }
-          ></AvatarImg>
+          <MainImg src={recipeData.mainImg}></MainImg>
+          <AvatarImg src={recipeData.creator.avatarImg}></AvatarImg>
           <UserId>{recipeData.creator.name}</UserId>
           <Title>{recipeData.title}</Title>
           <Description>{recipeData.description}</Description>
@@ -182,13 +170,7 @@ const DetailForm = ({ data }: any) => {
               <EachStepCard key={index}>
                 <StepNum>{item.stepNum}</StepNum>
                 <StepDesc>{item.stepDesc}</StepDesc>
-                <StepImg
-                  src={
-                    import.meta.env.VITE_APP_SERVER_CODE +
-                    "/uploads/" +
-                    item.stepImg
-                  }
-                ></StepImg>
+                <StepImg src={item.stepImg}></StepImg>
               </EachStepCard>
             ))}
           </CookingStepCard>
@@ -199,10 +181,7 @@ const DetailForm = ({ data }: any) => {
               key={index}
               style={{ transform: `translateX(-${currentIndex * 100}%)` }}
             >
-              <Image
-                src={import.meta.env.VITE_APP_SERVER_CODE + "/uploads/" + img}
-                alt="slider image"
-              />
+              <Image src={img.compImg} alt="slider image" />
             </ImageContainer>
           ))}
           <PrevButton onClick={handlePrevClick}>{"<"}</PrevButton>
