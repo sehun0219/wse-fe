@@ -166,8 +166,11 @@ const DetailForm = ({ data }: any) => {
             <ContentsBox>
               {recipeData.ingredient.map((item, index) => (
                 <Item key={index}>
-                  <ItemName>{item.ingredient}</ItemName>
-                  <ItemQuantity>{item.quantity}</ItemQuantity>
+                  <ItemName>
+                    {item.ingredient.charAt(0).toUpperCase() +
+                      item.ingredient.slice(1)}
+                  </ItemName>
+                  <ItemQuantity>{item.quantity.toUpperCase()}</ItemQuantity>
                 </Item>
               ))}
             </ContentsBox>
