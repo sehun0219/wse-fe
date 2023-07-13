@@ -233,7 +233,7 @@ const AddRecipeForm = () => {
         />
       </ThirdSection>
       <Br></Br>
-      {/* <ForthSection>
+      <ForthSection>
         <Complete>
           <CompleteTitle>Finished cooking photo</CompleteTitle>
           <CompleteImgWrap>
@@ -248,7 +248,7 @@ const AddRecipeForm = () => {
             ))}
           </CompleteImgWrap>
         </Complete>
-      </ForthSection> */}
+      </ForthSection>
 
       <SaveButton>
         <Save
