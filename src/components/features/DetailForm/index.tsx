@@ -189,7 +189,7 @@ const DetailForm = ({ data }: any) => {
         </SliderContainer>
       </MainContentWrap>
 
-      <SideWrap>
+      {/* <SideWrap>
         <MostViewCard>
           <TextWrap>
             <CardTitle>Top Ranked</CardTitle>
@@ -240,7 +240,7 @@ const DetailForm = ({ data }: any) => {
           <SideRecipeImg></SideRecipeImg>
           <SideRecipeTitle></SideRecipeTitle>
         </SideRecipeCard>
-      </SideWrap>
+      </SideWrap> */}
 
       <FooterBox>
         <Footer></Footer>

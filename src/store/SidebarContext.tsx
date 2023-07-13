@@ -16,7 +16,7 @@ interface SidebarProviderProps {
 }
 
 export const SidebarProvider = ({ children }: SidebarProviderProps) => {
-  const [isSidebarVisible, setIsSidebarVisible] = useState<boolean>(true);
+  const [isSidebarVisible, setIsSidebarVisible] = useState<boolean>(false);
   const [selectedCategory, setSelectedCategory] = useState<string>("");
 
   const toggleSidebar = () => {

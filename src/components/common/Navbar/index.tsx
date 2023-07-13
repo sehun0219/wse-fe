@@ -86,11 +86,11 @@ const Navbar = () => {
 
   return (
     <NavbarContainer>
-      <ToggleBox onClick={toggleSidebar}>
+      {/* <ToggleBox onClick={toggleSidebar}>
         <Line />
         <Line />
         <Line />
-      </ToggleBox>
+      </ToggleBox> */}
       <LogoWrap href="/">
         <LogoIcon src={Logo}></LogoIcon>
         <TextBox>What should I eat</TextBox>
@@ -102,12 +102,6 @@ const Navbar = () => {
       </SearchWrap>
 
       <ButtonWrap>
-        {!user?.name && !token && (
-          <SignUpWarp>
-            <StyledLinkSignUp to="/sign-up">Sign up</StyledLinkSignUp>
-            <StyledLogin to="/login">Login</StyledLogin>
-          </SignUpWarp>
-        )}
         {user?.name && token && (
           <LogoutWrap>
             <WelcomeBox>
@@ -123,6 +117,12 @@ const Navbar = () => {
           </LogoutWrap>
         )}
       </ButtonWrap>
+      {!user?.name && !token && (
+        <SignUpWarp>
+          <StyledLinkSignUp to="/sign-up">Sign up</StyledLinkSignUp>
+          <StyledLogin to="/login">Login</StyledLogin>
+        </SignUpWarp>
+      )}
     </NavbarContainer>
   );
 };

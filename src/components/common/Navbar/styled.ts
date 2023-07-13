@@ -2,13 +2,15 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 
 export const NavbarContainer = styled.div`
+  border: 1px solid red;
   display: flex;
   align-items: center;
   justify-content: space-around;
   background-color: #23272f;
   height: 60px;
-
   min-width: 100%;
+  padding-left: 120px;
+  padding-right: 120px;
 
   // 미디어 쿼리 추가
   @media (max-width: 768px) {
@@ -41,6 +43,8 @@ export const Line = styled.div`
 `;
 
 export const LogoWrap = styled.a`
+  position: absolute;
+  left: 120px;
   margin-left: 24px;
   font-size: 20px;
   font-weight: bold;
@@ -63,9 +67,11 @@ export const LogoIcon = styled.img`
 `;
 
 export const SearchWrap = styled.div`
-  width: 50%;
+  width: 500px;
   display: flex;
   align-items: center;
+  position: absolute;
+  left: 550px;
   input[type="text"]:focus {
     caret-color: #f1f1f1;
   }
@@ -115,10 +121,13 @@ export const SearchButton = styled.button`
 export const ButtonWrap = styled.div`
   margin-left: 220px;
 
+  position: relative;
+  left: 460px;
   display: flex;
   justify-content: space-around;
   align-items: center;
   gap: 8px;
+  width: 100px;
   height: 100%;
   gap: 16px;
 `;
@@ -132,7 +141,7 @@ export const LogoutWrap = styled.div`
 
 export const StyledLinkSignUp = styled(Link)`
   width: 100px;
-  height: 80%;
+  height: 100%;
   border-radius: 1em;
   background-color: #293644;
   font-size: 16px;
@@ -148,7 +157,7 @@ export const StyledLinkSignUp = styled(Link)`
 
 export const StyledLogin = styled(Link)`
   width: 100px;
-  height: 80%;
+  height: 100%;
 
   border-radius: 1em;
   background-color: #293644;
@@ -164,6 +173,8 @@ export const StyledLogin = styled(Link)`
   align-items: center;
 `;
 export const SignUpWarp = styled.div`
+  position: relative;
+  left: 260px;
   display: flex;
   gap: 16px;
   height: 70%;
