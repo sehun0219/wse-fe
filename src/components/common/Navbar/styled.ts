@@ -2,7 +2,6 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 
 export const NavbarContainer = styled.div`
-  border: 1px solid red;
   display: flex;
   align-items: center;
   justify-content: space-around;
@@ -246,6 +245,8 @@ export const AvatarBox = styled.div`
   align-items: center;
   width: 60px;
   height: 60px;
+  position: relative;
+  left: -18px;
 `;
 export const Avatar = styled.img`
   border: none;

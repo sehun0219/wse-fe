@@ -49,6 +49,7 @@ import { RecipeData } from "@/interface/recipe";
 import Footer from "@/components/common/Footer";
 import { getRecipeDetail } from "@/apis/recipe";
 const DetailForm = ({ data }: any) => {
+  console.log("data>>", data);
   const [recipeData, setRecipeData] = useState<RecipeData>({
     mainImg: "",
     title: "",
@@ -77,34 +78,44 @@ const DetailForm = ({ data }: any) => {
   });
 
   useEffect(() => {
-    console.log(data._id);
-    getRecipeDetail(data._id).then((res) =>
-      setRecipeData({
-        mainImg: res[0].mainImg,
-        title: res[0].title,
-        category: res[0].category,
-        description: res[0].desc,
-        cookingInfo: {
-          servingSize: res[0].cookingInfo.servingSize,
-          cookingTime: res[0].cookingInfo.time,
-          difficulty: res[0].cookingInfo.difficulty,
-          type: res[0].category,
-        },
-        coreItems: [],
-        ingredient: res[0].ingredient,
-        completedImg: res[0].completedImgs,
-        cookingStep: res[0].cookingStep.map((i: any) => ({
-          stepNum: i.stepNum,
-          stepDesc: i.stepDesc,
-          stepImg: i.imgSrc,
-        })),
-        creator: {
-          avatarImg: JSON.parse(res[0].userInfo).avatarImg,
-          name: JSON.parse(res[0].userInfo).name,
-        },
-      })
-    );
+    const fetchData = async () => {
+      try {
+        const res = await getRecipeDetail(data._id);
+
+        if (res && res.length > 0) {
+          setRecipeData({
+            mainImg: res[0].mainImg,
+            title: res[0].title,
+            category: res[0].category,
+            description: res[0].desc,
+            cookingInfo: {
+              servingSize: res[0].cookingInfo.servingSize,
+              cookingTime: res[0].cookingInfo.time,
+              difficulty: res[0].cookingInfo.difficulty,
+              type: res[0].category,
+            },
+            coreItems: [],
+            ingredient: res[0].ingredient,
+            completedImg: res[0].completedImgs,
+            cookingStep: res[0].cookingStep.map((i: any) => ({
+              stepNum: i.stepNum,
+              stepDesc: i.stepDesc,
+              stepImg: i.imgSrc,
+            })),
+            creator: {
+              avatarImg: JSON.parse(res[0].userInfo).avatarImg,
+              name: JSON.parse(res[0].userInfo).name,
+            },
+          });
+        }
+      } catch (error) {
+        console.error("Failed to fetch recipe detail:", error);
+      }
+    };
+
+    fetchData();
   }, []);
+
   const [currentIndex, setCurrentIndex] = useState(0);
   const handlePrevClick = () => {
     setCurrentIndex((oldCurrentIndex: number) => {
@@ -175,18 +186,21 @@ const DetailForm = ({ data }: any) => {
             ))}
           </CookingStepCard>
         </CookingStepWrap>
-        <SliderContainer>
-          {recipeData.completedImg.map((img, index) => (
+        {/* <SliderContainer>
+          {recipeData.completedImg.map((item, index) => (
             <ImageContainer
               key={index}
-              style={{ transform: `translateX(-${currentIndex * 100}%)` }}
+              style={{
+                transform: `translateX(-${currentIndex * 100}%)`,
+                display: currentIndex === index ? "block" : "none",
+              }}
             >
-              <Image src={img.compImg} alt="slider image" />
+              <Image src={item.img} alt="slider image" />
             </ImageContainer>
           ))}
           <PrevButton onClick={handlePrevClick}>{"<"}</PrevButton>
           <NextButton onClick={handleNextClick}>{">"}</NextButton>
-        </SliderContainer>
+        </SliderContainer> */}
       </MainContentWrap>
 
       {/* <SideWrap>

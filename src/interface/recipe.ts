@@ -21,9 +21,7 @@ export interface RecipeData {
     ingredient: string;
     quantity: string;
   }>;
-  completedImg: Array<{
-    compImg: string;
-  }>;
+  completedImg: Array<{ img: string }>;
 
   cookingStep: Array<{
     stepNum: number;

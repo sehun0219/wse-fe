@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const Container = styled.div<{ isSidebarVisible: boolean }>`
   width: 250px;
-  height: 920px;
+  min-height: 100%;
   flex-direction: column;
   display: ${({ isSidebarVisible }) => (isSidebarVisible ? "block" : "none")};
 `;

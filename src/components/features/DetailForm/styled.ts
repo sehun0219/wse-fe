@@ -102,7 +102,7 @@ export const FormTitle = styled.div`
   justify-content: center;
   width: 100%;
   height: 50px;
-  border: 1px solid #f1f;
+  border-bottom: 1px solid #f6f7f9;
   margin-bottom: 20px;
   font-size: x-large;
   font-weight: bold;
@@ -113,7 +113,7 @@ export const IngredientsDetailWrap = styled.div`
   justify-content: center;
   width: 100%;
 
-  border: 1px solid #1f1;
+  border: 1px solid #f6f7f9;
   padding-bottom: 10px;
   display: flex;
   flex-wrap: wrap;
@@ -142,13 +142,14 @@ export const ContentsBox = styled.div`
 
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-evenly;
-  color: #ffffff;
+  justify-content: start;
+  color: #f6f7f9;
+  margin-left: 40px;
 `;
 export const Item = styled.div`
   width: 320px;
   height: 45px;
-  border-bottom: 1px solid #f9a8d4;
+
   display: flex;
   align-items: center;
   justify-content: space-around;
@@ -172,7 +173,7 @@ export const ItemQuantity = styled.p`
 `;
 
 export const CookingStepWrap = styled.div`
-  border: 2px solid #cbd5e1;
+  border: 2px solid #f6f7f9;
   width: 90%;
   padding: 60px 100px 60px 100px;
   display: flex;
@@ -181,12 +182,11 @@ export const CookingStepWrap = styled.div`
 export const CookingStepTitle = styled.div`
   width: 100%;
   height: 50px;
-  border: 1px solid #f1f;
+
   margin-bottom: 20px;
 `;
 export const CookingStepCard = styled.div`
   width: 100%;
-  border: 1px solid #e9d5ff;
   display: flex;
   flex-wrap: wrap;
 `;
@@ -344,9 +344,6 @@ export const Image = styled.img`
   width: 100%;
 `;
 export const PrevButton = styled.button`
-  position: absolute;
-  left: 100;
-
   background: transparent;
   border: none;
   font-size: 3rem;
@@ -355,19 +352,15 @@ export const PrevButton = styled.button`
   padding: 0.5em;
   padding-top: 280px;
   transition: color 0.3s ease;
-
   &:hover {
     color: #777;
   }
-
   &:focus {
     outline: none;
   }
 `;
 
 export const NextButton = styled.button`
-  position: absolute;
-  right: 0;
   background: transparent;
   border: none;
   font-size: 3rem;

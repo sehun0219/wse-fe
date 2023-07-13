@@ -1,7 +1,6 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-  border: 1px solid #e9ecef;
   width: calc(100% - 250px);
   height: 100%;
   display: flex;
@@ -25,7 +24,6 @@ export const MainBody = styled.div`
   justify-content: flex-start;
   gap: 10px;
   margin-left: 50px;
-  border: 1px solid #1e1;
 `;
 
 export const PageNationWrap = styled.div`
