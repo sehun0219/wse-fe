@@ -111,12 +111,9 @@ export const CancelButton = styled.button`
 `;
 
 export const SearchButton = styled.button`
-  width: 30px;
-  height: 40px;
-  border: 3px solid #1e1;
   border-radius: 1em;
   background-color: #23272f;
-
+  border: none;
   cursor: pointer;
 `;
 
