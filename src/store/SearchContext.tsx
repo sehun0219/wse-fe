@@ -13,7 +13,7 @@ interface SearchProviderProps {
 
 export const SearchProvider = ({ children }: SearchProviderProps) => {
   const [searchTerm, setSearchTerm] = useState("");
-
+  console.log(searchTerm);
   return (
     <SearchContext.Provider value={{ searchTerm, setSearchTerm }}>
       {children}
