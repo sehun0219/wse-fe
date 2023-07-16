@@ -26,7 +26,7 @@ export const LogoutButton = styled.button`
   background-color: ${(props) => props.theme.bgColor};
   padding: 10px 15px;
   transition: 0.2s;
-  co &:hover {
+  &:hover {
     color: ${(props) => props.theme.accentColor};
   }
 `;
