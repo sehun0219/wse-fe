@@ -16,18 +16,17 @@ export interface RecipeData {
     difficulty: string;
     type: string;
   };
-  coreItems: Array<{ itemName: string }>;
-  ingredient: Array<{
+  coreItems: { itemName: string }[];
+  ingredient: {
     ingredient: string;
     quantity: string;
-  }>;
-  completedImg: Array<{ img: string }>;
-
-  cookingStep: Array<{
+  }[];
+  completedImg: string[];
+  cookingStep: {
     stepNum: number;
     stepDesc: string;
     stepImg: string;
-  }>;
+  }[];
   creator: {
     avatarImg: string;
     name: string;

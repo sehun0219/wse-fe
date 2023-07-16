@@ -1,8 +1,8 @@
+import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 import {
   PageWrapper,
   MainContentWrap,
   MainWrap,
-  SideWrap,
   MainImg,
   AvatarImg,
   UserId,
@@ -11,14 +11,6 @@ import {
   CookingInfo,
   InfoItem,
   IngredientsWrap,
-  MostViewCard,
-  ViewTitle,
-  ViewDesc,
-  ViewAvatar,
-  ViewId,
-  SideRecipeCard,
-  SideRecipeImg,
-  SideRecipeTitle,
   FormTitle,
   IngredientsDetailWrap,
   CoreItem,
@@ -31,10 +23,6 @@ import {
   Item,
   ItemName,
   ItemQuantity,
-  CardTitle,
-  CardAvatar,
-  TextWrap,
-  GapBox,
   CoreText,
   EachStepCard,
   FooterBox,
@@ -44,7 +32,7 @@ import {
   PrevButton,
   NextButton,
 } from "./styled";
-import { Key, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { RecipeData } from "@/interface/recipe";
 import Footer from "@/components/common/Footer";
 import { getRecipeDetail } from "@/apis/recipe";
@@ -117,19 +105,18 @@ const DetailForm = ({ data }: any) => {
   }, []);
 
   const [currentIndex, setCurrentIndex] = useState(0);
+
   const handlePrevClick = () => {
-    setCurrentIndex((oldCurrentIndex: number) => {
-      if (oldCurrentIndex === 0) {
-        return recipeData.completedImg.length - 1;
-      } else {
-        return oldCurrentIndex - 1;
-      }
-    });
+    setCurrentIndex((oldCurrentIndex) =>
+      oldCurrentIndex > 0
+        ? oldCurrentIndex - 1
+        : recipeData.completedImg.length - 1
+    );
   };
 
   const handleNextClick = () => {
     setCurrentIndex(
-      (oldCurrentIndex: number) =>
+      (oldCurrentIndex) =>
         (oldCurrentIndex + 1) % recipeData.completedImg.length
     );
   };
@@ -150,7 +137,6 @@ const DetailForm = ({ data }: any) => {
             <InfoItem>{recipeData.cookingInfo.difficulty}</InfoItem>
           </CookingInfo>
         </MainWrap>
-
         <IngredientsWrap>
           <FormTitle>Ingredient</FormTitle>
           <IngredientsDetailWrap>
@@ -176,7 +162,6 @@ const DetailForm = ({ data }: any) => {
             </ContentsBox>
           </IngredientsDetailWrap>
         </IngredientsWrap>
-
         <CookingStepWrap>
           <FormTitle>Cooking Steps</FormTitle>
           <CookingStepCard>
@@ -189,75 +174,23 @@ const DetailForm = ({ data }: any) => {
             ))}
           </CookingStepCard>
         </CookingStepWrap>
-        {/* <SliderContainer>
+        <SliderContainer>
           {recipeData.completedImg.map((item, index) => (
             <ImageContainer
               key={index}
-              style={{
-                transform: `translateX(-${currentIndex * 100}%)`,
-                display: currentIndex === index ? "block" : "none",
-              }}
+              style={{ display: currentIndex === index ? "block" : "none" }}
             >
-              <Image src={item.img} alt="slider image" />
+              <PrevButton onClick={handlePrevClick}>
+                <IoIosArrowBack />
+              </PrevButton>
+              <Image src={item ?? ""} alt="slider image" />
+              <NextButton onClick={handleNextClick}>
+                <IoIosArrowForward />
+              </NextButton>
             </ImageContainer>
           ))}
-          <PrevButton onClick={handlePrevClick}>{"<"}</PrevButton>
-          <NextButton onClick={handleNextClick}>{">"}</NextButton>
-        </SliderContainer> */}
+        </SliderContainer>
       </MainContentWrap>
-
-      {/* <SideWrap>
-        <MostViewCard>
-          <TextWrap>
-            <CardTitle>Top Ranked</CardTitle>
-            <ViewTitle>A must-win date recipe!...</ViewTitle>
-            <ViewDesc></ViewDesc>
-          </TextWrap>
-          <CardAvatar>
-            <ViewAvatar></ViewAvatar>
-            <ViewId></ViewId>
-          </CardAvatar>
-        </MostViewCard>
-        <MostViewCard>
-          <TextWrap>
-            <CardTitle>2nd Ranked</CardTitle>
-            <ViewTitle>A must-win date recipe!...</ViewTitle>
-            <ViewDesc></ViewDesc>
-          </TextWrap>
-          <CardAvatar>
-            <ViewAvatar></ViewAvatar>
-            <ViewId></ViewId>
-          </CardAvatar>
-        </MostViewCard>
-        <MostViewCard>
-          <TextWrap>
-            <CardTitle>3rd Ranked</CardTitle>
-            <ViewTitle>A must-win date recipe!...</ViewTitle>
-            <ViewDesc></ViewDesc>
-          </TextWrap>
-          <CardAvatar>
-            <ViewAvatar></ViewAvatar>
-            <ViewId></ViewId>
-          </CardAvatar>
-        </MostViewCard>
-        <GapBox>Recommendable</GapBox>
-        <SideRecipeCard>
-          <SideRecipeImg></SideRecipeImg>
-          <SideRecipeTitle></SideRecipeTitle>
-        </SideRecipeCard>
-        <SideRecipeCard>
-          <SideRecipeImg></SideRecipeImg>
-          <SideRecipeTitle></SideRecipeTitle>
-        </SideRecipeCard>
-        <SideRecipeCard>
-          <SideRecipeImg></SideRecipeImg>
-          <SideRecipeTitle></SideRecipeTitle>
-        </SideRecipeCard>
-        <SideRecipeCard>
-          <SideRecipeImg></SideRecipeImg>
-          <SideRecipeTitle></SideRecipeTitle>
-        </SideRecipeCard>
-      </SideWrap> */}
 
       <FooterBox>
         <Footer></Footer>

@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 
 export const Container = styled.div`
   display: flex;
-  border: 1px solid #1e1;
   align-items: center;
   justify-content: center;
 `;

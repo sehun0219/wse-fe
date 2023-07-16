@@ -11,7 +11,7 @@ export const MainContentWrap = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 55%;
+  width: 1020px;
 `;
 
 export const MainWrap = styled.div`
@@ -21,14 +21,18 @@ export const MainWrap = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-
-  width: 90%;
-  height: 900px;
+  width: 920px;
   padding: 10px 100px 10px 100px;
+  @media (max-width: 700px) {
+    width: 460px;
+  }
 `;
 export const MainImg = styled.img`
-  width: 90%;
+  width: 640px;
   height: 45%;
+  @media (max-width: 700px) {
+    width: 320px;
+  }
 `;
 export const AvatarImg = styled.img`
   border: 4px solid rgba(255, 255, 255, 0.3);
@@ -40,6 +44,12 @@ export const AvatarImg = styled.img`
   bottom: 60px;
   z-index: 9999;
   margin-bottom: -50px;
+  @media (max-width: 700px) {
+    width: 80px;
+    height: 80px;
+    position: relative;
+    bottom: 50px;
+  }
 `;
 export const UserId = styled.p`
   width: 160px;
@@ -49,15 +59,23 @@ export const UserId = styled.p`
   font-size: large;
   display: flex;
   justify-content: center;
+  @media (max-width: 700px) {
+    width: 80px;
+    margin-top: 10px;
+  }
 `;
 export const Title = styled.div`
-  width: 100%;
+  width: 900px;
   margin: 10px;
   font-size: 30px;
   font-weight: bold;
   display: flex;
   justify-content: center;
   color: #fff8e7;
+  @media (max-width: 700px) {
+    width: 420px;
+    font-size: 20px;
+  }
 `;
 export const Description = styled.p`
   width: 100%;
@@ -65,17 +83,27 @@ export const Description = styled.p`
   display: flex;
   justify-content: center;
   color: #bebfc5;
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 600;
   padding: 12px;
+  @media (max-width: 700px) {
+    width: 420px;
+    font-size: 20px;
+  }
 `;
 export const CookingInfo = styled.div`
-  width: 100%;
+  width: 730px;
   height: 120px;
   margin: 10px;
   display: flex;
   justify-content: space-around;
   align-items: center;
+  font-size: 18px;
+  @media (max-width: 700px) {
+    width: 415px;
+    height: 60px;
+    font-size: 8px;
+  }
 `;
 export const InfoItem = styled.p`
   border: 3px solid #8a2be2;
@@ -87,16 +115,19 @@ export const InfoItem = styled.p`
   justify-content: center;
   align-items: center;
   color: #fff8e7;
-  font-weight: 600;
+  font-weight: 700;
   padding-top: 6px;
 `;
 
 export const IngredientsWrap = styled.div`
   border: 2px solid #f6f7f9;
-  width: 90%;
+  width: 920px;
   padding: 60px 100px 40px 100px;
   display: flex;
   flex-direction: column;
+  @media (max-width: 700px) {
+    width: 460px;
+  }
 `;
 export const FormTitle = styled.div`
   justify-content: center;
@@ -174,10 +205,13 @@ export const ItemQuantity = styled.p`
 
 export const CookingStepWrap = styled.div`
   border: 2px solid #f6f7f9;
-  width: 90%;
+  width: 920px;
   padding: 60px 100px 60px 100px;
   display: flex;
   flex-direction: column;
+  @media (max-width: 700px) {
+    width: 460px;
+  }
 `;
 export const CookingStepTitle = styled.div`
   width: 100%;
@@ -207,6 +241,10 @@ export const StepNum = styled.div`
   font-size: 24px;
   font-weight: bold;
   color: #f6f7f9;
+  @media (max-width: 700px) {
+    width: 20px;
+    border: none;
+  }
 `;
 export const StepDesc = styled.div`
   width: 52%;
@@ -219,11 +257,18 @@ export const StepDesc = styled.div`
   font-size: 18px;
   color: #f6f7f9;
   font-weight: 400;
+  @media (max-width: 700px) {
+    width: 235px;
+    border: none;
+  }
 `;
 export const StepImg = styled.img`
   width: 40%;
   height: 180px;
   border: 1px solid #5eead4;
+  @media (max-width: 700px) {
+    width: 255px;
+  }
 `;
 
 export const SideWrap = styled.div`
@@ -329,53 +374,40 @@ export const FooterBox = styled.div`
 
 export const SliderContainer = styled.div`
   border: 2px solid #f6f7f9;
-  width: 90%;
+  width: 920px;
   display: flex;
   overflow: hidden;
+  @media (max-width: 700px) {
+    width: 460px;
+  }
 `;
 export const ImageContainer = styled.div`
   flex-shrink: 0;
   width: 100%;
   transition: all 0.5s ease-in-out;
   display: flex;
+  position: relative;
 `;
 
 export const Image = styled.img`
   width: 100%;
 `;
-export const PrevButton = styled.button`
+export const ArrowButton = styled.button`
+  position: absolute;
+  top: 50%; // vertical center
+  transform: translateY(-50%);
+  z-index: 1;
   background: transparent;
   border: none;
-  font-size: 3rem;
-  color: #ffffff;
+  color: white;
+  font-size: 2rem;
   cursor: pointer;
-  padding: 0.5em;
-  padding-top: 280px;
-  transition: color 0.3s ease;
-  &:hover {
-    color: #777;
-  }
-  &:focus {
-    outline: none;
-  }
 `;
 
-export const NextButton = styled.button`
-  background: transparent;
-  border: none;
-  font-size: 3rem;
-  color: #ffffff;
-  cursor: pointer;
-  padding: 0.5em;
-  padding-top: 280px;
-  margin-right: 500px;
-  transition: color 0.3s ease;
+export const PrevButton = styled(ArrowButton)`
+  left: 10px; // from left side
+`;
 
-  &:hover {
-    color: #777;
-  }
-
-  &:focus {
-    outline: none;
-  }
+export const NextButton = styled(ArrowButton)`
+  right: 10px; // from right side
 `;

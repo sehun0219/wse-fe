@@ -29,10 +29,10 @@ const CookingInfo = ({ title, onChange }: CookingInfoProps) => {
           onChange={(e) => handleSelectChange(e, "servingSize")}
         >
           <option value="hidden">Serving size</option>
-          <option value="For one">For one</option>
-          <option value="For Two">For Two</option>
-          <option value="For Three">For Three</option>
-          <option value="More than Four">More than Four</option>
+          <option value="For one">one</option>
+          <option value="For Two">Two</option>
+          <option value="For Three">Three</option>
+          <option value="For Many">For Many</option>
         </Select>
         <Select
           id="cookingTime"
@@ -43,7 +43,7 @@ const CookingInfo = ({ title, onChange }: CookingInfoProps) => {
           <option value="15 min">15 min</option>
           <option value="20 min">20 min</option>
           <option value="30 min">30 min</option>
-          <option value="More than an hour">More than an hour</option>
+          <option value="hours">hours</option>
         </Select>
         <Select
           id="difficulty"

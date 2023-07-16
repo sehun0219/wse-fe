@@ -22,7 +22,6 @@ const useSearchBar = () => {
 
   const handleCancel = () => {
     setSearch("");
-    setSearchTerm("");
   };
 
   return {

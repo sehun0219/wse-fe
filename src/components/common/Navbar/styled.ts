@@ -6,7 +6,6 @@ export const NavbarContainer = styled.div`
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  border: 1px solid #1e1;
   padding: 0px 20px;
   height: 80px;
 `;
