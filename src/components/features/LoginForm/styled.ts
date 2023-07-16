@@ -15,7 +15,7 @@ export const FormContainer = styled.form`
   align-items: center;
   flex-wrap: wrap;
   width: 350px;
-  height: 400px;
+  height: 520px;
   background-color: #ffff;
   padding-bottom: 30px;
 `;

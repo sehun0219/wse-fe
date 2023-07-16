@@ -4,8 +4,6 @@ import {
   LogoImg,
   LoginButton,
   PageWrapper,
-  BrWrap,
-  Br,
   PassWordChecker,
   SignUpChecker,
   SignUpText,
@@ -18,10 +16,6 @@ import LoginLogo from "@/public/Logo/CardLogo.png";
 const LoginForm = () => {
   const { handleSubmit, email, setEmail, password, showPassword, setPassword } =
     useLoginForm();
-
-  const responseMessage = (response: any) => {
-    console.log(response);
-  };
 
   return (
     <PageWrapper>
@@ -47,15 +41,6 @@ const LoginForm = () => {
         </InputContainer>
 
         <LoginButton type="submit">Login</LoginButton>
-        {/* <BrWrap>
-          <Br></Br>
-          Or
-          <Br></Br>
-        </BrWrap>
-
-        <div>
-          <GoogleLogin onSuccess={responseMessage} />
-        </div> */}
         <PassWordChecker to="/">Did you forget your password?</PassWordChecker>
       </FormContainer>
       <SignUpChecker>
