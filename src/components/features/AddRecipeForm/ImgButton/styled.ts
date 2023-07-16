@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { ImageContainer } from "../../DetailForm/styled";
 
 export const UploadContainer = styled.div`
   width: 270px;
