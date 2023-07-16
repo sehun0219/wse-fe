@@ -13,17 +13,20 @@ export const LinkButton = styled(Link)`
   border: none;
   margin-right: 10px;
   transition: 0.2s;
+  font-weight: 400;
   &:hover {
     color: ${(props) => props.theme.accentColor};
     text-decoration: none;
   }
 `;
 export const LogoutButton = styled.button`
-  color: ${(props) => props.theme.bgColor};
+  color: ${(props) => props.theme.textColor};
   border: none;
+  font-size: 16px;
+  background-color: ${(props) => props.theme.bgColor};
   padding: 10px 15px;
   transition: 0.2s;
-  &:hover {
+  co &:hover {
     color: ${(props) => props.theme.accentColor};
   }
 `;

@@ -7,11 +7,6 @@ import NavButton from "../NavButton";
 const Navbar = () => {
   return (
     <NavbarContainer>
-      {/* <ToggleBox onClick={toggleSidebar}>
-        <Line />
-        <Line />
-        <Line />
-      </ToggleBox> */}
       <Logo />
       <SearchBar />
       <Profile />

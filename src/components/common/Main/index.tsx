@@ -1,17 +1,9 @@
-import { useEffect, useState, useContext } from "react";
+import { useEffect, useState } from "react";
 import RecipeCard from "../RecipeCard";
 import { Link } from "react-router-dom";
-import {
-  Container,
-  Top,
-  MainBody,
-  PageNationWrap,
-  PageNation,
-  PageNationButton,
-} from "./styled";
+import { Container, Top, MainBody } from "./styled";
 import { getRecipeList } from "@/apis/recipe";
 import { useSearch } from "@/store/SearchContext";
-import { SidebarContext } from "@/store/SidebarContext";
 
 const Main = () => {
   const { searchTerm } = useSearch();
